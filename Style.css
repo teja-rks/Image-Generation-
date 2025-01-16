@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+.image-generator{
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-image: url(Images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.image-generator .continer {
+    position: relative;
+    color: #fff;
+    padding: 0 15px;
+    max-width: 760px;
+    text-align: center;
+}
+.image-generator::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: #121212;
+}
+.image-generator h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+  
+.image-generator p {
+    margin-top: 10px;
+    font-size: 1.35rem;
+}
+.generate-form .controls{
+    display: flex;
+    height: 100%;
+    gap: 15px;
+}
+.image-generator .generate-form{
+    display: flex;
+    background: white;
+    height: 56px;
+    width: 100%;
+    margin-bottom:15px;
+    /* background: #fff; */
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px;
+    margin-top: 45px;
+    padding: 6px;
+    /* width: 100px; */
+}
+.image-generator .prompt-input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 1rem;
+    padding: 0 17px;
+    border-radius: 30px;
+    background: none;
+}
+.image-generator .Image-Quantity{
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: none;
+}
+.image-generator .generate-btn{
+    font-size: 1rem;
+    outline: none;
+    border:none;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    background: #4949E7;
+    height: 100%;
+    padding: 0 25px;
+    border-radius: 30px;
+}
+.generate-form button:hover {
+    background: #1d1de2;
+}
+.generate-form .generate-btn[disabled] {
+    opacity: 0.6;
+    pointer-events: none;
+}
+.image-gallery{
+    display: flex;
+    gap: 15px;
+    padding: 0 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px auto;
+    max-width: 1240px;
+}
+.image-gallery .img-card{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 4px;
+    aspect-ratio: 1/1;
+    width: 285px;
+}
+.image-gallery .img-card.loading img {
+    width: 80px;
+    height: 80px;
+}
+.image-gallery .img-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.image-gallery .img-card .download-btn{
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    height: 36px;
+    width:36px;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+.image-gallery .img-card .download-btn img {
+    width: 14px;
+    height: 14px;
+}
+.image-gallery .img-card:not(.loading):hover .download-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
